@@ -1,8 +1,11 @@
 com\application\config\AppConfig.class
 com\application\model\Guitarist.class
+com\application\dao\UserDao.class
 com\application\model\Pianist.class
 com\application\model\Ukelele.class
 SpringApplication.class
+com\application\aspect\Log4jAspect.class
+com\application\dao\UserDao$1.class
 com\application\model\Guitar.class
 com\application\model\Synth.class
 com\application\annotation\MyAnnotation.class
@@ -11,3 +14,4 @@ com\application\aspect\AspectInterceptor.class
 com\application\model\Piano.class
 Application.class
 com\application\model\IInstrument.class
+com\application\model\User.class

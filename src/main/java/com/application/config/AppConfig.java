@@ -3,7 +3,7 @@ package com.application.config;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan(basePackages ="com.application")
+@ComponentScan(basePackages ="com.application.*")
 @EnableAspectJAutoProxy
 //@ImportResource("classpath:application-context.xml")
 public class AppConfig {
