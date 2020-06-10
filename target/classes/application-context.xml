@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-->
+        <context:component-scan base-package="com.application" />
+
+        <bean id="guitar" class="com.application.model.Guitar" />
+
+        <bean id="guitarist" class="com.application.model.Guitarist">
+            <property name="instrument" ref="guitar"/>
+        </bean>
+
+        <bean id="aspectInterceptor" class="com.application.aspect.AspectInterceptor"></bean>
+        <aop:config>
+            <aop:pointcut id="serviceToStringPointCut" expression="execution(* com.application.model.Guitarist.toString())"/>
+
+            <aop:aspect id="aspect" ref="aspectInterceptor">
+                <aop:before method="interceptToString" pointcut-ref="serviceToStringPointCut"/>
+                <aop:after-returning method="interceptorToStringReturning" returning="result" pointcut-ref="serviceToStringPointCut"/>
+            </aop:aspect>
+        </aop:config>
+
+        <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+        -->
+</beans>
